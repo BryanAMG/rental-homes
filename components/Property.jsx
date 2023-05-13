@@ -13,7 +13,7 @@ const Property = ({ coverPhoto, price, rentFrequency, rooms, title, baths, area,
   <Link href={`/property/${externalID}`} passHref style={{ flexGrow: 1 }}>
     <Flex flexWrap='wrap' w='420px' p='5' paddingTop='0px' justifyContent='flex-start' cursor='pointer'>
       <Box>
-        <Image src={coverPhoto ? coverPhoto.url : DefaultImage} width={400} height={260} style={{ aspectRatio: '16/9' }} alt={title.substring(0, 30)} />
+        <Image src={coverPhoto ? coverPhoto.url : DefaultImage} width={400} height={260} style={{ aspectRatio: '16/9' }} alt={title?.substring(0, 30)} />
       </Box>
       <Box w='full'>
         <Flex paddingTop='2' alignItems='center' justifyContent='space-between'>
@@ -30,7 +30,7 @@ const Property = ({ coverPhoto, price, rentFrequency, rooms, title, baths, area,
           <FaBed /> | {baths} <FaBath /> | {formatNumber.format(area)} sqft <BsGridFill />
         </Flex>
         <Text fontSize='lg'>
-          {title.length > 30 ? title.substring(0, 30) + '...' : title}
+          {title?.length > 30 ? title.substring(0, 30) + '...' : title}
         </Text>
       </Box>
     </Flex>
